@@ -1,12 +1,24 @@
+import React from 'react';
 import './App.css';
-import MyButton from './MyButton';
+import LoginForm from './loginForm';
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <MyButton />
-      </header>
+    <div className="App" style={styles.container}>
+      <LoginForm />
     </div>
   );
 }
+
+const styles = {
+  container: {
+    minHeight: '100vh',
+    backgroundColor: '#f0f2f5',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '20px',
+  }
+};
+
 export default App;
