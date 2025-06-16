@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const [rememberMe, setRememberMe] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Email: ${email}\nPassword: ${password}`);
+    alert(`Email: ${email}\nPassword: ${password}\nGhi nhớ: ${rememberMe}`);
   };
 
   const formStyle = {
@@ -35,6 +35,13 @@ function LoginForm() {
     fontSize: 15,
     boxSizing: 'border-box',
     outline: 'none',
+  };
+
+  const checkboxContainerStyle = {
+    marginTop: 16,
+    display: 'flex',
+    alignItems: 'center',
+    gap: 8,
   };
 
   const buttonStyle = {
@@ -75,6 +82,16 @@ function LoginForm() {
         placeholder="Nhập mật khẩu"
         style={inputStyle}
       />
+
+      <div style={checkboxContainerStyle}>
+        <input
+          type="checkbox"
+          id="rememberMe"
+          checked={rememberMe}
+          onChange={(e) => setRememberMe(e.target.checked)}
+        />
+        <label htmlFor="rememberMe">Ghi nhớ tôi</label>
+      </div>
 
       <button type="submit" style={buttonStyle}>
         Đăng nhập
